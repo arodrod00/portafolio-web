@@ -5,6 +5,7 @@ import { portfolio } from "@/data/portfolio"
 import { LanguageProvider } from "@/contexts/LanguageContext"
 import { HtmlLangSync } from "@/components/HtmlLangSync"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] })
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] })
@@ -35,6 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </LanguageProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
