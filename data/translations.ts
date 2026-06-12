@@ -128,6 +128,7 @@ export const t = {
     // ─── FOOTER ──────────────────────────────────
     footer: {
       backToTop: "Volver arriba ↑",
+      terms:     "Términos y Condiciones",
     },
 
     // ─── WHATSAPP FLOTANTE ───────────────────────
@@ -249,6 +250,7 @@ export const t = {
 
     footer: {
       backToTop: "Back to top ↑",
+      terms:     "Terms & Conditions",
     },
 
     whatsapp: {

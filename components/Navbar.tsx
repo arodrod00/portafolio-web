@@ -115,46 +115,48 @@ export default function Navbar({ name }: { name: string }) {
         </div>
       </nav>
 
-      {/* Mobile dropdown */}
-      {menuOpen && (
-        <div
-          className="sm:hidden border-t"
-          style={{
-            background: dark ? "rgba(8,8,8,0.97)" : "rgba(255,255,255,0.97)",
-            borderColor: dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)",
-            backdropFilter: "blur(16px)",
-          }}
-        >
-          <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
-            {navLinks.map(([href, label]) => (
-              <a
-                key={href}
-                href={href}
-                onClick={close}
-                className="py-3 text-sm font-medium transition-colors border-b"
-                style={{
-                  color: dark ? "rgba(255,255,255,0.65)" : "#374151",
-                  borderColor: dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
-                }}
-              >
-                {label}
-              </a>
-            ))}
+      {/* Mobile dropdown — always mounted, animated via max-height */}
+      <div
+        className="sm:hidden border-t overflow-hidden"
+        style={{
+          maxHeight: menuOpen ? "400px" : "0px",
+          opacity: menuOpen ? 1 : 0,
+          pointerEvents: menuOpen ? "auto" : "none",
+          transition: "max-height 0.35s cubic-bezier(0.4,0,0.2,1), opacity 0.25s ease",
+          background: dark ? "rgba(8,8,8,0.97)" : "rgba(255,255,255,0.97)",
+          borderColor: menuOpen ? (dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.06)") : "transparent",
+          backdropFilter: "blur(16px)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col gap-1">
+          {navLinks.map(([href, label]) => (
             <a
-              href="#contacto"
+              key={href}
+              href={href}
               onClick={close}
-              className="mt-3 inline-flex items-center justify-center text-sm font-medium rounded-full py-3 transition-all"
-              style={
-                dark
-                  ? { background: "#fbbf24", color: "#0a0a0a" }
-                  : { background: "#0a0a0a", color: "#fff" }
-              }
+              className="py-3 text-sm font-medium transition-colors border-b"
+              style={{
+                color: dark ? "rgba(255,255,255,0.65)" : "#374151",
+                borderColor: dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.05)",
+              }}
             >
-              {tx.cta}
+              {label}
             </a>
-          </div>
+          ))}
+          <a
+            href="#contacto"
+            onClick={close}
+            className="mt-3 inline-flex items-center justify-center text-sm font-medium rounded-full py-3 transition-all"
+            style={
+              dark
+                ? { background: "#fbbf24", color: "#0a0a0a" }
+                : { background: "#0a0a0a", color: "#fff" }
+            }
+          >
+            {tx.cta}
+          </a>
         </div>
-      )}
+      </div>
     </header>
   )
 }
