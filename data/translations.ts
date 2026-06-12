@@ -123,6 +123,8 @@ export const t = {
       labelPhone:  "Teléfono",
       labelWA:     "WhatsApp",
       waText:      "Escríbeme ahora",
+      emailSubject: "Consulta sobre proyecto web",
+      emailBody:    "Hola Adrian,\n\nVi tu portafolio y me gustaría hablar sobre un proyecto web para mi negocio.\n\nMi nombre es: \nMi negocio es: \nLo que necesito: \n\nQuedo a la espera.\nSaludos,",
     },
 
     // ─── FOOTER ──────────────────────────────────
@@ -246,6 +248,8 @@ export const t = {
       labelPhone: "Phone",
       labelWA:    "WhatsApp",
       waText:     "Message me now",
+      emailSubject: "Web project inquiry",
+      emailBody:    "Hi Adrian,\n\nI saw your portfolio and I'd like to discuss a web project for my business.\n\nMy name is: \nMy business is: \nWhat I need: \n\nLooking forward to hearing from you.\nBest regards,",
     },
 
     footer: {

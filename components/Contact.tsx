@@ -7,7 +7,11 @@ import { portfolio } from "@/data/portfolio"
 export default function Contact() {
   const { lang } = useLanguage()
   const tx = t[lang].contactSection
+  const waMsg = t[lang].whatsapp.message
   const { contact } = portfolio
+
+  const waHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(waMsg)}`
+  const mailHref = `mailto:${contact.email}?subject=${encodeURIComponent(tx.emailSubject)}&body=${encodeURIComponent(tx.emailBody)}`
 
   return (
     <section id="contacto" className="py-16 sm:py-24 border-t border-gray-100">
@@ -32,7 +36,7 @@ export default function Contact() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href={`https://wa.me/${contact.whatsapp}`}
+              href={waHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all hover:scale-105"
@@ -41,7 +45,7 @@ export default function Contact() {
               {tx.btnWA}
             </a>
             <a
-              href={`mailto:${contact.email}`}
+              href={mailHref}
               className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all"
               style={{ border: "0.5px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}
             >
@@ -52,7 +56,7 @@ export default function Contact() {
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <a
-            href={`mailto:${contact.email}`}
+            href={mailHref}
             className="group flex items-center gap-4 p-5 border border-gray-100 rounded-2xl hover:border-gray-300 hover:bg-gray-50 transition-all"
           >
             <div className="w-10 h-10 rounded-full bg-gray-100 group-hover:bg-white flex items-center justify-center transition-colors shrink-0">
@@ -82,7 +86,7 @@ export default function Contact() {
           </a>
 
           <a
-            href={`https://wa.me/${contact.whatsapp}`}
+            href={waHref}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-4 p-5 bg-gray-900 rounded-2xl hover:bg-gray-800 transition-all"
