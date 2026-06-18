@@ -8,7 +8,9 @@ export default function Hero() {
   const { lang } = useLanguage()
   const tx = t[lang].hero
   const stats = t[lang].stats
+  const waMsg = t[lang].whatsapp.message
   const { name, location, availableForWork, contact } = portfolio
+  const waHref = `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(waMsg)}`
   const [first, ...rest] = name.split(" ")
   const last = rest.join(" ")
 
@@ -64,7 +66,7 @@ export default function Hero() {
               {tx.viewProjects}
             </a>
             <a
-              href={`https://wa.me/${contact.whatsapp}`}
+              href={waHref}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all"
