@@ -9,10 +9,8 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import { portfolio } from "@/data/portfolio"
 
-// Code-split heavy below-fold components — JS chunk loads separately from initial bundle
-const StyleExamples = dynamic(() => import("@/components/StyleExamples"), {
-  loading: () => <div className="py-24" aria-hidden="true" />,
-})
+// Code-split below-fold components — JS chunk loads separately, SSR keeps HTML intact
+const StyleExamples = dynamic(() => import("@/components/StyleExamples"))
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"))
 
 export default function Page() {
