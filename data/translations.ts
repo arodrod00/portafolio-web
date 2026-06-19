@@ -51,7 +51,8 @@ export const t = {
       { title: "Desarrollo Web",  description: "Código rápido y limpio con React y Next.js. Sitios optimizados para velocidad de carga y posicionamiento en Google." },
       { title: "Landing Pages",   description: "Páginas de destino diseñadas para convertir. Cada elemento pensado para llevar al visitante a tomar acción." },
       { title: "Tiendas Online",  description: "E-commerce completo con catálogo, carrito y pagos integrados. Listo para vender desde el primer día." },
-      { title: "Sistemas de Reservas", description: "Páginas y apps de booking para tu negocio: citas, reservaciones y pagos en línea. Tus clientes reservan solos, tú solo cobras." },
+      { title: "Sistemas de Reservas", description: "Páginas de booking para barberías, salones de belleza y nail salons: citas, reservaciones y pagos en línea. Tus clientes reservan solos, tú solo cobras." },
+      { title: "Automatización de Negocio", description: "Conecto tus herramientas para que tu negocio funcione solo, sin tareas repetitivas a mano.", tags: ["Recordatorios automáticos de citas", "Respuestas automáticas a preguntas frecuentes", "Confirmaciones y seguimiento post-servicio", "Sincronización con calendario y pagos", "Solicitud automática de reseñas"] },
     ],
 
     // ─── ¿POR QUÉ WEB? ───────────────────────────
@@ -181,7 +182,8 @@ export const t = {
       { title: "Web Dev",        description: "Fast, clean code with React and Next.js. Sites optimized for loading speed and Google rankings." },
       { title: "Landing Pages",  description: "Conversion-focused landing pages. Every element designed to drive the visitor to take action." },
       { title: "Online Stores",  description: "Full e-commerce with catalog, cart, and integrated payments. Ready to sell from day one." },
-      { title: "Booking Systems", description: "Booking pages and apps for your business: appointments, reservations, and online payments. Your clients book themselves, you just get paid." },
+      { title: "Booking Systems", description: "Booking pages for barbershops, beauty salons, and nail salons: appointments, reservations, and online payments. Your clients book themselves, you just get paid." },
+      { title: "Business Automation", description: "I connect your tools so your business runs itself, with no repetitive manual tasks.", tags: ["Automated appointment reminders", "Auto-replies to frequently asked questions", "Confirmations and post-service follow-up", "Calendar and payment sync", "Automatic review requests"] },
     ],
 
     whySection: {

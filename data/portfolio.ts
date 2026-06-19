@@ -61,7 +61,20 @@ export const portfolio = {
       number: "05",
       title: "Sistemas de Reservas",
       description:
-        "Páginas y apps de booking para negocios: citas, reservaciones y pagos en línea. Tus clientes reservan solos, tú solo cobras.",
+        "Páginas de booking para barberías, salones de belleza y nail salons: citas, reservaciones y pagos en línea. Tus clientes reservan solos, tú solo cobras.",
+    },
+    {
+      number: "06",
+      title: "Automatización de Negocio",
+      description:
+        "Conecto tus herramientas para que tu negocio funcione solo, sin tareas repetitivas a mano.",
+      tags: [
+        "Recordatorios automáticos de citas",
+        "Respuestas automáticas a preguntas frecuentes",
+        "Confirmaciones y seguimiento post-servicio",
+        "Sincronización con calendario y pagos",
+        "Solicitud automática de reseñas",
+      ],
     },
   ],
 
