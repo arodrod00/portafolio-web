@@ -39,42 +39,39 @@ export default function Hero() {
           </div>
         )}
 
+        <div className="flex items-center gap-3 mb-5">
+          <span className="text-base sm:text-lg font-medium text-white">
+            {first} <span style={{ color: "#fbbf24" }}>{last}</span>
+          </span>
+          <span className="text-xs uppercase tracking-[0.2em]" style={{ color: "rgba(255,255,255,0.3)" }}>
+            {tx.role}
+          </span>
+        </div>
+
         <h1
-          className="font-medium text-white leading-none tracking-tight mb-10"
-          style={{ fontSize: "clamp(46px, 10vw, 128px)", letterSpacing: "-0.03em" }}
+          className="font-medium text-white leading-tight tracking-tight mb-10 max-w-4xl"
+          style={{ fontSize: "clamp(34px, 6vw, 80px)", letterSpacing: "-0.02em" }}
         >
-          <span className="block">{first}</span>
-          <span className="block" style={{ color: "#fbbf24" }}>{last}</span>
+          {tx.tagline}
         </h1>
 
-        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-8 max-w-5xl">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] mb-3" style={{ color: "rgba(255,255,255,0.3)" }}>
-              {tx.role}
-            </p>
-            <p className="text-xl leading-relaxed max-w-md" style={{ color: "rgba(255,255,255,0.55)" }}>
-              {tx.tagline}
-            </p>
-          </div>
-
-          <div className="flex flex-wrap gap-3 shrink-0">
-            <a
-              href="#estilos"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all hover:scale-105"
-              style={{ background: "#fbbf24", color: "#0a0a0a" }}
-            >
-              {tx.viewProjects}
-            </a>
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all"
-              style={{ border: "0.5px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)" }}
-            >
-              {tx.whatsapp}
-            </a>
-          </div>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="#estilos"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all hover:scale-105"
+            style={{ background: "#fbbf24", color: "#0a0a0a" }}
+          >
+            {tx.viewProjects}
+          </a>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium rounded-full transition-all"
+            style={{ border: "0.5px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.7)" }}
+          >
+            {tx.whatsapp}
+          </a>
         </div>
       </div>
 
