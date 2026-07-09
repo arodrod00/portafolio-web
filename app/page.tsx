@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
 import Marquee from "@/components/Marquee"
 import Services from "@/components/Services"
+import Projects from "@/components/Projects"
 import WhyWeb from "@/components/WhyWeb"
 import Skills from "@/components/Skills"
 import Contact from "@/components/Contact"
@@ -21,6 +22,7 @@ export default function Page() {
         <Hero />
         <Marquee />
         <Services />
+        <Projects />
         <StyleExamples />
         <WhyWeb />
         <Skills />

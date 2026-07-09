@@ -104,6 +104,18 @@ export const t = {
       viewBtn:  "Ver proyecto →",
     },
     projectCategories: ["E-Commerce", "Landing Page", "Sitio Corporativo", "Portafolio"],
+    projects: [
+      { title: "Titan Outdoor Living",         category: "Sitio Corporativo",   description: "Sitio para contratista de espacios exteriores y pérgolas en el sur de Florida." },
+      { title: "Shapiro Kitchens & Closets",    category: "Sitio Corporativo",   description: "Landing page para remodelación de cocinas y closets a medida." },
+      { title: "Reyes Painting",                category: "Landing Page",        description: "Sitio con formulario de cotización para pintura y limpieza a presión." },
+      { title: "Pina Painting",                 category: "Landing Page",        description: "Galería de proyectos y cotizaciones para pintura y mejoras del hogar." },
+      { title: "Luxury Woodwork Inc.",          category: "Sitio Corporativo",   description: "Sitio de presentación para carpintería y ebanistería de lujo." },
+      { title: "Aluminum Luxury Decor",         category: "Sitio Corporativo",   description: "Sitio con video scroll-scrub para contratista de aluminio en Miami." },
+      { title: "Hair Designs by MJ",            category: "Sistema de Reservas", description: "Sitio bilingüe en Next.js para salón de belleza, con galería de resultados." },
+      { title: "Styled by Noy",                 category: "Sistema de Reservas", description: "Sitio en Next.js para salón de belleza con reserva por WhatsApp." },
+      { title: "Hello Gorgeous Hair Studio",    category: "Sistema de Reservas", description: "Sitio de presentación y reservas para estudio de belleza capilar." },
+      { title: "Camero Outdoor Kitchen",        category: "Sitio Corporativo",   description: "Sitio de presentación para constructor de cocinas exteriores en Miami." },
+    ],
 
     // ─── HABILIDADES / SOBRE MÍ ──────────────────
     skillsSection: {
@@ -232,6 +244,18 @@ export const t = {
       viewBtn:  "View project →",
     },
     projectCategories: ["E-Commerce", "Landing Page", "Corporate Site", "Portfolio"],
+    projects: [
+      { title: "Titan Outdoor Living",         category: "Corporate Site",   description: "Site for an outdoor living and pergola contractor in South Florida." },
+      { title: "Shapiro Kitchens & Closets",    category: "Corporate Site",   description: "Landing page for custom kitchen and closet remodeling." },
+      { title: "Reyes Painting",                category: "Landing Page",     description: "Quote-request site for painting and pressure washing." },
+      { title: "Pina Painting",                 category: "Landing Page",     description: "Project gallery and quote requests for painting and home improvement." },
+      { title: "Luxury Woodwork Inc.",          category: "Corporate Site",   description: "Showcase site for luxury custom woodwork and cabinetry." },
+      { title: "Aluminum Luxury Decor",         category: "Corporate Site",   description: "Site with scroll-scrub video for a Miami aluminum contractor." },
+      { title: "Hair Designs by MJ",            category: "Booking System",   description: "Bilingual Next.js site for a hair salon, with a results gallery." },
+      { title: "Styled by Noy",                 category: "Booking System",   description: "Next.js site for a hair salon with WhatsApp booking." },
+      { title: "Hello Gorgeous Hair Studio",    category: "Booking System",   description: "Showcase and booking site for a hair studio." },
+      { title: "Camero Outdoor Kitchen",        category: "Corporate Site",   description: "Showcase site for a Miami outdoor kitchen builder." },
+    ],
 
     skillsSection: {
       label:       "About me",

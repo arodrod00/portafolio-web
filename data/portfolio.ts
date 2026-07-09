@@ -82,46 +82,98 @@ export const portfolio = {
   // Para agregar imágenes: coloca el archivo en /public/projects/
   // y escribe el nombre aquí. Ej: image: "tienda-moda.jpg"
   // Si no tienes imagen, déjalo como "" — se mostrará un fondo de color.
+  // El texto (title/category/description) se sobreescribe desde
+  // translations.ts → projects[lang]. Aquí solo importan url/year/color/image.
   projects: [
     {
-      title: "Nombre del Proyecto",
-      category: "E-Commerce",
-      description:
-        "Tienda online para marca de ropa con catálogo de productos, carrito de compras y pagos integrados con Stripe.",
-      image: "",   // ej: "proyecto1.jpg"
-      url: "",     // URL del proyecto en vivo — vacío para ocultar el botón
-      year: "2024",
-      color: "#f5f0eb",  // color del placeholder si no hay imagen
+      title: "Titan Outdoor Living",
+      category: "Sitio Corporativo",
+      description: "Sitio para contratista de espacios exteriores y pérgolas en el sur de Florida.",
+      image: "",
+      url: "https://titan-outdoor-living.vercel.app",
+      year: "2026",
+      color: "#eef4f1",
     },
     {
-      title: "Nombre del Proyecto",
-      category: "Landing Page",
-      description:
-        "Página de aterrizaje para empresa con alta tasa de conversión, diseño moderno y carga ultrarrápida.",
+      title: "Shapiro Kitchens & Closets",
+      category: "Sitio Corporativo",
+      description: "Landing page para remodelación de cocinas y closets a medida.",
       image: "",
-      url: "",
-      year: "2024",
+      url: "https://shapiro-kitchens-closets.vercel.app",
+      year: "2026",
+      color: "#f5f0e8",
+    },
+    {
+      title: "Reyes Painting",
+      category: "Landing Page",
+      description: "Sitio con formulario de cotización para pintura y limpieza a presión.",
+      image: "",
+      url: "https://reyes-painting.vercel.app",
+      year: "2026",
       color: "#eef2f7",
     },
     {
-      title: "Nombre del Proyecto",
-      category: "Sitio Corporativo",
-      description:
-        "Sitio web para empresa de servicios con CMS integrado para que el cliente actualice su contenido sin código.",
+      title: "Pina Painting",
+      category: "Landing Page",
+      description: "Galería de proyectos y cotizaciones para pintura y mejoras del hogar.",
       image: "",
-      url: "",
-      year: "2024",
-      color: "#f0f5ee",
+      url: "https://pina-painting.vercel.app",
+      year: "2026",
+      color: "#f7f0ea",
     },
     {
-      title: "Nombre del Proyecto",
-      category: "Portafolio",
-      description:
-        "Portafolio personal para fotógrafo con galería optimizada, formulario de contacto y diseño responsive.",
+      title: "Luxury Woodwork Inc.",
+      category: "Sitio Corporativo",
+      description: "Sitio de presentación para carpintería y ebanistería de lujo.",
       image: "",
-      url: "",
-      year: "2023",
-      color: "#f5eef5",
+      url: "https://luxury-woodwork.vercel.app",
+      year: "2026",
+      color: "#f2ece4",
+    },
+    {
+      title: "Aluminum Luxury Decor",
+      category: "Sitio Corporativo",
+      description: "Sitio con video scroll-scrub para contratista de aluminio en Miami.",
+      image: "",
+      url: "https://aluminum-luxury-decor.vercel.app",
+      year: "2026",
+      color: "#eef1f5",
+    },
+    {
+      title: "Hair Designs by MJ",
+      category: "Sistema de Reservas",
+      description: "Sitio bilingüe en Next.js para salón de belleza, con galería de resultados.",
+      image: "",
+      url: "https://hair-designs-by-mj.vercel.app",
+      year: "2026",
+      color: "#f7eef2",
+    },
+    {
+      title: "Styled by Noy",
+      category: "Sistema de Reservas",
+      description: "Sitio en Next.js para salón de belleza con reserva por WhatsApp.",
+      image: "",
+      url: "https://styledbynoy.vercel.app",
+      year: "2026",
+      color: "#f9eef0",
+    },
+    {
+      title: "Hello Gorgeous Hair Studio",
+      category: "Sistema de Reservas",
+      description: "Sitio de presentación y reservas para estudio de belleza capilar.",
+      image: "",
+      url: "https://hello-gorgeous-hair-studio.vercel.app",
+      year: "2026",
+      color: "#faf0f2",
+    },
+    {
+      title: "Camero Outdoor Kitchen",
+      category: "Sitio Corporativo",
+      description: "Sitio de presentación para constructor de cocinas exteriores en Miami.",
+      image: "",
+      url: "https://camero-outdoor-kitchen.vercel.app",
+      year: "2026",
+      color: "#eff5ee",
     },
   ],
 
