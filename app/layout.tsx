@@ -13,9 +13,17 @@ const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"]
 export const metadata: Metadata = {
   title: `${portfolio.name} — ${portfolio.role}`,
   description: portfolio.tagline,
+  metadataBase: new URL(portfolio.siteUrl),
+  alternates: {
+    canonical: "/",
+  },
+  verification: {
+    google: "E9piICufY8eehmRCz2xc9_pOVHDFHtY4mF-vLRjgD2o",
+  },
   openGraph: {
     title: `${portfolio.name} — ${portfolio.role}`,
     description: portfolio.tagline,
+    url: portfolio.siteUrl,
     type: "website",
     locale: "es_US",
     siteName: portfolio.name,

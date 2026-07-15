@@ -12,7 +12,7 @@ export const portfolio = {
   tagline: "Creo sitios web que convierten visitantes en clientes.",
   bio: "Especialista en diseño y desarrollo web con enfoque en resultados. Ayudo a negocios a tener una presencia digital profesional que genera confianza y ventas.",
   location: "Miami, FL",
-  siteUrl: "https://adrianrodriguez.dev",  // cambia esto a tu dominio real cuando lo tengas
+  siteUrl: "https://rodriguezportfolio.website",
   availableForWork: true,        // cambia a false para ocultar el badge "Disponible"
 
   // ─── CONTACTO ───────────────────────────────────
