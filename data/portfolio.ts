@@ -7,10 +7,11 @@
 export const portfolio = {
 
   // ─── INFO PERSONAL ──────────────────────────────
-  name: "Adrian Rodriguez",
-  role: "Desarrollador & Diseñador Web",
-  tagline: "Creo sitios web que convierten visitantes en clientes.",
-  bio: "Especialista en diseño y desarrollo web con enfoque en resultados. Ayudo a negocios a tener una presencia digital profesional que genera confianza y ventas.",
+  name: "Relift LLC",
+  founder: "Adrian Rodriguez",
+  role: "Software Development Company",
+  tagline: "We build software that lifts your business.",
+  bio: "Software development company based in Miami. We design, build, and automate digital products that help businesses grow.",
   location: "Miami, FL",
   siteUrl: "https://rodriguezportfolio.website",
   availableForWork: true,        // cambia a false para ocultar el badge "Disponible"

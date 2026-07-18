@@ -21,8 +21,11 @@ export const t = {
       available:    "Disponible para nuevos proyectos",
       viewProjects: "Ver estilos →",
       whatsapp:     "WhatsApp →",
-      role:         "Desarrollador & Diseñador Web",
-      tagline:      "Creo sitios web que convierten visitantes en clientes.",
+      role:         "Software Development Company",
+      tagline:      "Construimos el software que hace crecer tu negocio.",
+      sub:          "Diseño, desarrollo y automatización para empresas que quieren resultados reales.",
+      startProject: "Iniciar proyecto →",
+      viewWork:     "Ver proyectos →",
     },
 
     // ─── ESTADÍSTICAS ────────────────────────────
@@ -167,8 +170,11 @@ export const t = {
       available:    "Available for new projects",
       viewProjects: "See styles →",
       whatsapp:     "WhatsApp →",
-      role:         "Web Developer & Designer",
-      tagline:      "I build websites that turn visitors into clients.",
+      role:         "Software Development Company",
+      tagline:      "We build software that lifts your business.",
+      sub:          "Design, development, and automation for businesses that want real results.",
+      startProject: "Start a project →",
+      viewWork:     "See our work →",
     },
 
     stats: [
