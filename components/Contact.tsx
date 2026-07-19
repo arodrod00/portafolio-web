@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
+import { ScrambleText } from "@/components/ScrambleText"
 
 export default function Contact() {
   const { lang } = useLanguage()
@@ -28,8 +29,11 @@ export default function Contact() {
             className="font-medium text-white leading-tight mb-6"
             style={{ fontSize: "clamp(32px, 5vw, 64px)", letterSpacing: "-0.02em" }}
           >
-            {tx.heading[0]}<br />{tx.heading[1]}
-            <span style={{ color: "#fbbf24" }}>{tx.heading[2]}</span>
+            <ScrambleText text={tx.heading[0]} /><br />
+            <ScrambleText text={tx.heading[1]} delay={160} />
+            <span style={{ color: "#fbbf24" }}>
+              <ScrambleText text={tx.heading[2]} delay={300} />
+            </span>
           </h2>
           <p className="text-lg mb-10" style={{ color: "rgba(255,255,255,0.4)" }}>
             {tx.subheading}

@@ -4,6 +4,8 @@ import Hero from "@/components/Hero"
 import Marquee from "@/components/Marquee"
 import Services from "@/components/Services"
 import Projects from "@/components/Projects"
+import AboutRelift from "@/components/AboutRelift"
+import Towme from "@/components/Towme"
 import WhyWeb from "@/components/WhyWeb"
 import Skills from "@/components/Skills"
 import Contact from "@/components/Contact"
@@ -23,6 +25,8 @@ export default function Page() {
         <Marquee />
         <Services />
         <Projects />
+        <AboutRelift />
+        <Towme />
         <StyleExamples />
         <WhyWeb />
         <Skills />

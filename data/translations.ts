@@ -9,11 +9,11 @@ export const t = {
   es: {
     // ─── NAVEGACIÓN ──────────────────────────────
     nav: {
-      services:  "Servicios",
-      styles:    "Estilos",
-      why:       "¿Por qué?",
-      projects:  "Proyectos",
-      cta:       "Hablemos",
+      services: "Servicios",
+      work:     "Portafolio",
+      about:    "Nosotros",
+      towme:    "Towme",
+      cta:      "Hablemos",
     },
 
     // ─── HERO ────────────────────────────────────
@@ -21,8 +21,11 @@ export const t = {
       available:    "Disponible para nuevos proyectos",
       viewProjects: "Ver estilos →",
       whatsapp:     "WhatsApp →",
-      role:         "Desarrollador & Diseñador Web",
-      tagline:      "Creo sitios web que convierten visitantes en clientes.",
+      role:         "Software Development Company",
+      tagline:      "Construimos el software que hace crecer tu negocio.",
+      sub:          "Diseño, desarrollo y automatización para empresas que quieren resultados reales.",
+      startProject: "Iniciar proyecto →",
+      viewWork:     "Ver proyectos →",
     },
 
     // ─── ESTADÍSTICAS ────────────────────────────
@@ -42,9 +45,9 @@ export const t = {
     // ─── SERVICIOS ───────────────────────────────
     servicesSection: {
       label:      "Servicios",
-      heading:    ["Lo que puedo hacer", "por tu negocio"],
+      heading:    ["Lo que hacemos", "por tu negocio"],
       cta:        "Solicitar presupuesto →",
-      disclaimer: "Los servicios y estilos que ves aquí son ejemplos de lo que puedo hacer. Cada proyecto se desarrolla de forma completamente personalizada según las necesidades, el estilo y los objetivos de tu negocio.",
+      disclaimer: "Los servicios y estilos que ves aquí son ejemplos de lo que hacemos. Cada proyecto se desarrolla de forma completamente personalizada según las necesidades, el estilo y los objetivos de tu negocio.",
     },
     services: [
       { title: "Diseño Web",      description: "Sitios modernos, limpios y adaptados a tu marca. Diseño centrado en la experiencia del usuario y en comunicar tu valor." },
@@ -52,7 +55,7 @@ export const t = {
       { title: "Landing Pages",   description: "Páginas de destino diseñadas para convertir. Cada elemento pensado para llevar al visitante a tomar acción." },
       { title: "Tiendas Online",  description: "E-commerce completo con catálogo, carrito y pagos integrados. Listo para vender desde el primer día." },
       { title: "Sistemas de Reservas", description: "Páginas de booking para barberías, salones de belleza y nail salons: citas, reservaciones y pagos en línea. Tus clientes reservan solos, tú solo cobras." },
-      { title: "Automatización de Negocio", description: "Conecto tus herramientas para que tu negocio funcione solo, sin tareas repetitivas a mano.", tags: ["Recordatorios automáticos de citas", "Respuestas automáticas a preguntas frecuentes", "Confirmaciones y seguimiento post-servicio", "Sincronización con calendario y pagos", "Solicitud automática de reseñas"] },
+      { title: "Automatización de Negocio", description: "Conectamos tus herramientas para que tu negocio funcione solo, sin tareas repetitivas a mano.", tags: ["Recordatorios automáticos de citas", "Respuestas automáticas a preguntas frecuentes", "Confirmaciones y seguimiento post-servicio", "Sincronización con calendario y pagos", "Solicitud automática de reseñas"] },
     ],
 
     // ─── ¿POR QUÉ WEB? ───────────────────────────
@@ -112,16 +115,29 @@ export const t = {
       { title: "Luxury Woodwork Inc.",          category: "Sitio Corporativo",   description: "Sitio de presentación para carpintería y ebanistería de lujo." },
       { title: "Aluminum Luxury Decor",         category: "Sitio Corporativo",   description: "Sitio con video scroll-scrub para contratista de aluminio en Miami." },
       { title: "Hair Designs by MJ",            category: "Sistema de Reservas", description: "Sitio bilingüe en Next.js para salón de belleza, con galería de resultados." },
-      { title: "Styled by Noy",                 category: "Sistema de Reservas", description: "Sitio en Next.js para salón de belleza con reserva por WhatsApp." },
       { title: "Hello Gorgeous Hair Studio",    category: "Sistema de Reservas", description: "Sitio de presentación y reservas para estudio de belleza capilar." },
       { title: "Camero Outdoor Kitchen",        category: "Sitio Corporativo",   description: "Sitio de presentación para constructor de cocinas exteriores en Miami." },
     ],
 
-    // ─── HABILIDADES / SOBRE MÍ ──────────────────
+    // ─── ABOUT RELIFT ────────────────────────────
+    aboutSection: {
+      label:       "Sobre Relift",
+      headline:    ["Construimos herramientas digitales", "que levantan tu negocio."],
+      bio:         "Relift LLC es una empresa de desarrollo de software con base en Miami, FL. Diseñamos, construimos y automatizamos productos digitales para negocios que quieren resultados reales — no solo un sitio bonito.",
+      founderRole: "Founder & Lead Developer · Miami, FL",
+      diffLabel:   "Lo que nos hace diferentes",
+      diff: [
+        { title: "Código propio, sin templates",  body: "Cada proyecto se programa desde cero. Sin page builders ni temas comprados. Control total sobre rendimiento y diseño." },
+        { title: "Diseño y código, los dos",      body: "Un solo equipo cubre diseño y desarrollo. Sin intermediarios ni malentendidos — entregas más rápidas y coherentes." },
+        { title: "Enfocados en resultados",       body: "Cada decisión se evalúa con una sola pregunta: ¿esto le trae más clientes al negocio?" },
+      ],
+    },
+
+    // ─── HABILIDADES / SOBRE NOSOTROS ────────────
     skillsSection: {
-      label:        "Sobre mí",
+      label:        "Sobre nosotros",
       heading:      ["Diseño y código.", "Los dos."],
-      bio:          "Especialista en diseño y desarrollo web con enfoque en resultados. Ayudo a negocios a tener una presencia digital profesional que genera confianza y ventas.",
+      bio:          "Empresa especialista en diseño y desarrollo de software con enfoque en resultados. Ayudamos a negocios a construir una presencia digital profesional que genera confianza y ventas.",
       skillsLabel:  ["Desarrollo", "Diseño", "Herramientas"],
     },
 
@@ -129,15 +145,25 @@ export const t = {
     contactSection: {
       badge:       "¿Listo para empezar?",
       heading:     ["Tu negocio merece", "una presencia digital", " profesional."],
-      subheading:  "Te respondo en menos de 24 horas.",
-      btnWA:       "Escríbeme por WhatsApp →",
+      subheading:  "Te respondemos en menos de 24 horas.",
+      btnWA:       "Escríbenos por WhatsApp →",
       btnEmail:    "Enviar email",
       labelEmail:  "Email",
       labelPhone:  "Teléfono",
       labelWA:     "WhatsApp",
-      waText:      "Escríbeme ahora",
+      waText:      "Escríbenos ahora",
       emailSubject: "Consulta sobre proyecto web",
-      emailBody:    "Hola Adrian,\n\nVi tu portafolio y me gustaría hablar sobre un proyecto web para mi negocio.\n\nMi nombre es: \nMi negocio es: \nLo que necesito: \n\nQuedo a la espera.\nSaludos,",
+      emailBody:    "Hola,\n\nVi el sitio de Relift LLC y me gustaría hablar sobre un proyecto para mi negocio.\n\nMi nombre es: \nMi negocio es: \nLo que necesito: \n\nQuedo a la espera.\nSaludos,",
+    },
+
+    // ─── TOWME ───────────────────────────────────
+    towmeSection: {
+      label:       "Nuestros productos",
+      badge:       "Próximamente",
+      tagline:     "Algo nuevo está en camino.",
+      description: "Estamos construyendo un producto que cambia cómo los negocios locales gestionan su presencia digital. Más detalles pronto.",
+      notify:      "Avisarme cuando esté listo →",
+      by:          "Un producto de Relift LLC",
     },
 
     // ─── FOOTER ──────────────────────────────────
@@ -149,26 +175,29 @@ export const t = {
     // ─── WHATSAPP FLOTANTE ───────────────────────
     whatsapp: {
       ariaLabel: "Contactar por WhatsApp",
-      message:   "Hola Adrian! Vi tu portafolio y me gustaría hablar sobre un proyecto web. 🙂",
+      message:   "Hola! Vi el sitio de Relift LLC y me gustaría hablar sobre un proyecto. 🙂",
     },
   },
 
   // ══════════════════════════════════════════════
   en: {
     nav: {
-      services:  "Services",
-      styles:    "Styles",
-      why:       "Why?",
-      projects:  "Projects",
-      cta:       "Let's talk",
+      services: "Services",
+      work:     "Work",
+      about:    "About",
+      towme:    "Towme",
+      cta:      "Let's talk",
     },
 
     hero: {
       available:    "Available for new projects",
       viewProjects: "See styles →",
       whatsapp:     "WhatsApp →",
-      role:         "Web Developer & Designer",
-      tagline:      "I build websites that turn visitors into clients.",
+      role:         "Software Development Company",
+      tagline:      "We build software that lifts your business.",
+      sub:          "Design, development, and automation for businesses that want real results.",
+      startProject: "Start a project →",
+      viewWork:     "See our work →",
     },
 
     stats: [
@@ -185,9 +214,9 @@ export const t = {
 
     servicesSection: {
       label:      "Services",
-      heading:    ["What I can do", "for your business"],
+      heading:    ["What we do", "for your business"],
       cta:        "Request a quote →",
-      disclaimer: "The services and styles you see here are examples of what I can do. Every project is developed fully customized to the needs, style, and goals of your specific business.",
+      disclaimer: "The services and styles you see here are examples of what we do. Every project is developed fully customized to the needs, style, and goals of your specific business.",
     },
     services: [
       { title: "Web Design",     description: "Modern, clean websites tailored to your brand. Design focused on user experience and communicating your value." },
@@ -195,7 +224,7 @@ export const t = {
       { title: "Landing Pages",  description: "Conversion-focused landing pages. Every element designed to drive the visitor to take action." },
       { title: "Online Stores",  description: "Full e-commerce with catalog, cart, and integrated payments. Ready to sell from day one." },
       { title: "Booking Systems", description: "Booking pages for barbershops, beauty salons, and nail salons: appointments, reservations, and online payments. Your clients book themselves, you just get paid." },
-      { title: "Business Automation", description: "I connect your tools so your business runs itself, with no repetitive manual tasks.", tags: ["Automated appointment reminders", "Auto-replies to frequently asked questions", "Confirmations and post-service follow-up", "Calendar and payment sync", "Automatic review requests"] },
+      { title: "Business Automation", description: "We connect your tools so your business runs itself, with no repetitive manual tasks.", tags: ["Automated appointment reminders", "Auto-replies to frequently asked questions", "Confirmations and post-service follow-up", "Calendar and payment sync", "Automatic review requests"] },
     ],
 
     whySection: {
@@ -252,30 +281,51 @@ export const t = {
       { title: "Luxury Woodwork Inc.",          category: "Corporate Site",   description: "Showcase site for luxury custom woodwork and cabinetry." },
       { title: "Aluminum Luxury Decor",         category: "Corporate Site",   description: "Site with scroll-scrub video for a Miami aluminum contractor." },
       { title: "Hair Designs by MJ",            category: "Booking System",   description: "Bilingual Next.js site for a hair salon, with a results gallery." },
-      { title: "Styled by Noy",                 category: "Booking System",   description: "Next.js site for a hair salon with WhatsApp booking." },
       { title: "Hello Gorgeous Hair Studio",    category: "Booking System",   description: "Showcase and booking site for a hair studio." },
       { title: "Camero Outdoor Kitchen",        category: "Corporate Site",   description: "Showcase site for a Miami outdoor kitchen builder." },
     ],
 
+    aboutSection: {
+      label:       "About Relift",
+      headline:    ["We build digital tools that", "lift your business."],
+      bio:         "Relift LLC is a software development company based in Miami, FL. We design, build, and automate digital products for businesses that want real results — not just a pretty website.",
+      founderRole: "Founder & Lead Developer · Miami, FL",
+      diffLabel:   "What makes us different",
+      diff: [
+        { title: "Custom code, no templates",  body: "Every project is hand-coded from scratch. No page builders, no purchased themes. Full control over performance and design." },
+        { title: "Design and code, both",      body: "One team covers design and development. No middlemen, no miscommunication — faster and more cohesive delivery." },
+        { title: "Results-first thinking",     body: "Every decision is evaluated against one question: does this bring more clients to the business?" },
+      ],
+    },
+
     skillsSection: {
-      label:       "About me",
+      label:       "About us",
       heading:     ["Design and code.", "Both."],
-      bio:         "Web design and development specialist focused on results. I help businesses build a professional digital presence that generates trust and sales.",
+      bio:         "Software development company focused on results. We help businesses build a professional digital presence that generates trust and sales.",
       skillsLabel: ["Development", "Design", "Tools"],
     },
 
     contactSection: {
       badge:      "Ready to start?",
       heading:    ["Your business deserves", "a professional", " digital presence."],
-      subheading: "I'll get back to you within 24 hours.",
-      btnWA:      "Message me on WhatsApp →",
+      subheading: "We'll get back to you within 24 hours.",
+      btnWA:      "Message us on WhatsApp →",
       btnEmail:   "Send email",
       labelEmail: "Email",
       labelPhone: "Phone",
       labelWA:    "WhatsApp",
-      waText:     "Message me now",
+      waText:     "Message us now",
       emailSubject: "Web project inquiry",
-      emailBody:    "Hi Adrian,\n\nI saw your portfolio and I'd like to discuss a web project for my business.\n\nMy name is: \nMy business is: \nWhat I need: \n\nLooking forward to hearing from you.\nBest regards,",
+      emailBody:    "Hi,\n\nI saw the Relift LLC website and I'd like to discuss a project for my business.\n\nMy name is: \nMy business is: \nWhat I need: \n\nLooking forward to hearing from you.\nBest regards,",
+    },
+
+    towmeSection: {
+      label:       "Our products",
+      badge:       "Coming soon",
+      tagline:     "Something new is on its way.",
+      description: "We're building a product that changes how local businesses manage their digital presence. More details coming soon.",
+      notify:      "Notify me when it's ready →",
+      by:          "A product by Relift LLC",
     },
 
     footer: {
@@ -285,7 +335,7 @@ export const t = {
 
     whatsapp: {
       ariaLabel: "Contact via WhatsApp",
-      message:   "Hi Adrian! I saw your portfolio and I'd like to talk about a web project. 🙂",
+      message:   "Hi! I saw the Relift LLC website and I'd like to talk about a project. 🙂",
     },
   },
 } as const

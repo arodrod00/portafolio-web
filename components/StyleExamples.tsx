@@ -548,6 +548,8 @@ const previews: Record<number, React.ReactNode> = {
   ),
 }
 
+import { ScrambleText } from "@/components/ScrambleText"
+
 export default function StyleExamples() {
   const { lang } = useLanguage()
   const tx = t[lang].stylesSection
@@ -561,7 +563,8 @@ export default function StyleExamples() {
           <div>
             <p className="text-xs tracking-widest text-gray-400 uppercase mb-3">{tx.label}</p>
             <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 leading-tight">
-              {tx.heading[0]}<br />{tx.heading[1]}
+              <ScrambleText text={tx.heading[0]} /><br />
+              <ScrambleText text={tx.heading[1]} delay={160} />
             </h2>
           </div>
           <a

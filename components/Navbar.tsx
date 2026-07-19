@@ -24,9 +24,9 @@ export default function Navbar({ name }: { name: string }) {
 
   const navLinks: [string, string][] = [
     ["#servicios", tx.services],
-    ["#proyectos", tx.projects],
-    ["#estilos",   tx.styles],
-    ["#por-que",   tx.why],
+    ["#proyectos", tx.work],
+    ["#about",     tx.about],
+    ["#towme",     tx.towme],
   ]
 
   return (
