@@ -150,15 +150,6 @@ export const portfolio = {
       color: "#f7eef2",
     },
     {
-      title: "Styled by Noy",
-      category: "Sistema de Reservas",
-      description: "Sitio en Next.js para salón de belleza con reserva por WhatsApp.",
-      image: "",
-      url: "https://styledbynoy.vercel.app",
-      year: "2026",
-      color: "#f9eef0",
-    },
-    {
       title: "Hello Gorgeous Hair Studio",
       category: "Sistema de Reservas",
       description: "Sitio de presentación y reservas para estudio de belleza capilar.",
