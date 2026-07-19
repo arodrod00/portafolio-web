@@ -9,11 +9,11 @@ export const t = {
   es: {
     // ─── NAVEGACIÓN ──────────────────────────────
     nav: {
-      services:  "Servicios",
-      styles:    "Estilos",
-      why:       "¿Por qué?",
-      projects:  "Proyectos",
-      cta:       "Hablemos",
+      services: "Servicios",
+      work:     "Portafolio",
+      about:    "Nosotros",
+      towme:    "Towme",
+      cta:      "Hablemos",
     },
 
     // ─── HERO ────────────────────────────────────
@@ -156,6 +156,16 @@ export const t = {
       emailBody:    "Hola,\n\nVi el sitio de Relift LLC y me gustaría hablar sobre un proyecto para mi negocio.\n\nMi nombre es: \nMi negocio es: \nLo que necesito: \n\nQuedo a la espera.\nSaludos,",
     },
 
+    // ─── TOWME ───────────────────────────────────
+    towmeSection: {
+      label:       "Nuestros productos",
+      badge:       "Próximamente",
+      tagline:     "Algo nuevo está en camino.",
+      description: "Estamos construyendo un producto que cambia cómo los negocios locales gestionan su presencia digital. Más detalles pronto.",
+      notify:      "Avisarme cuando esté listo →",
+      by:          "Un producto de Relift LLC",
+    },
+
     // ─── FOOTER ──────────────────────────────────
     footer: {
       backToTop: "Volver arriba ↑",
@@ -172,11 +182,11 @@ export const t = {
   // ══════════════════════════════════════════════
   en: {
     nav: {
-      services:  "Services",
-      styles:    "Styles",
-      why:       "Why?",
-      projects:  "Projects",
-      cta:       "Let's talk",
+      services: "Services",
+      work:     "Work",
+      about:    "About",
+      towme:    "Towme",
+      cta:      "Let's talk",
     },
 
     hero: {
@@ -307,6 +317,15 @@ export const t = {
       waText:     "Message us now",
       emailSubject: "Web project inquiry",
       emailBody:    "Hi,\n\nI saw the Relift LLC website and I'd like to discuss a project for my business.\n\nMy name is: \nMy business is: \nWhat I need: \n\nLooking forward to hearing from you.\nBest regards,",
+    },
+
+    towmeSection: {
+      label:       "Our products",
+      badge:       "Coming soon",
+      tagline:     "Something new is on its way.",
+      description: "We're building a product that changes how local businesses manage their digital presence. More details coming soon.",
+      notify:      "Notify me when it's ready →",
+      by:          "A product by Relift LLC",
     },
 
     footer: {
