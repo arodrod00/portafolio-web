@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
 import { ScrambleText } from "@/components/ScrambleText"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function Contact() {
   const { lang } = useLanguage()
@@ -39,22 +40,26 @@ export default function Contact() {
             {tx.subheading}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={waHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all hover:scale-105"
-              style={{ background: "#fbbf24", color: "#0a0a0a" }}
-            >
-              {tx.btnWA}
-            </a>
-            <a
-              href={mailHref}
-              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all"
-              style={{ border: "0.5px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}
-            >
-              {tx.btnEmail}
-            </a>
+            <MagneticButton>
+              <a
+                href={waHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all"
+                style={{ background: "#fbbf24", color: "#0a0a0a" }}
+              >
+                {tx.btnWA}
+              </a>
+            </MagneticButton>
+            <MagneticButton strength={0.3}>
+              <a
+                href={mailHref}
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all"
+                style={{ border: "0.5px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.65)" }}
+              >
+                {tx.btnEmail}
+              </a>
+            </MagneticButton>
           </div>
         </div>
 

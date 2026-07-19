@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function Navbar({ name }: { name: string }) {
   const [scrolled, setScrolled] = useState(false)
@@ -75,17 +76,19 @@ export default function Navbar({ name }: { name: string }) {
             {lang === "es" ? "EN" : "ES"}
           </button>
 
-          <a
-            href="#contacto"
-            className="text-sm font-medium px-4 py-2 rounded-full transition-all duration-300"
-            style={
-              dark
-                ? { background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.85)", border: "0.5px solid rgba(255,255,255,0.15)" }
-                : { background: "#0a0a0a", color: "#fff" }
-            }
-          >
-            {tx.cta}
-          </a>
+          <MagneticButton strength={0.3}>
+            <a
+              href="#contacto"
+              className="text-sm font-medium px-4 py-2 rounded-full transition-all duration-300"
+              style={
+                dark
+                  ? { background: "rgba(255,255,255,0.1)", color: "rgba(255,255,255,0.85)", border: "0.5px solid rgba(255,255,255,0.15)" }
+                  : { background: "#0a0a0a", color: "#fff" }
+              }
+            >
+              {tx.cta}
+            </a>
+          </MagneticButton>
         </div>
 
         {/* Mobile: language toggle + hamburger */}

@@ -4,6 +4,7 @@ import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
 import { ScrambleText } from "@/components/ScrambleText"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function Towme() {
   const { lang } = useLanguage()
@@ -93,21 +94,23 @@ export default function Towme() {
 
             {/* CTA */}
             <div className="flex flex-wrap items-center gap-4">
-              <a
-                href={waHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 hover:scale-105"
-                style={{
-                  background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-                  color: "#fff",
-                  boxShadow: "0 0 0 0 rgba(99,102,241,0.4)",
-                }}
-                onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 28px rgba(99,102,241,0.45)")}
-                onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(99,102,241,0.4)")}
-              >
-                {tx.notify}
-              </a>
+              <MagneticButton>
+                <a
+                  href={waHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300"
+                  style={{
+                    background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                    color: "#fff",
+                    boxShadow: "0 0 0 0 rgba(99,102,241,0.4)",
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 28px rgba(99,102,241,0.45)")}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(99,102,241,0.4)")}
+                >
+                  {tx.notify}
+                </a>
+              </MagneticButton>
 
               <span
                 className="text-xs"

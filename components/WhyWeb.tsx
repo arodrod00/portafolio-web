@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { ScrambleText } from "@/components/ScrambleText"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function WhyWeb() {
   const { lang } = useLanguage()
@@ -44,15 +45,17 @@ export default function WhyWeb() {
             </h3>
             <p className="mt-3 text-gray-500 text-sm leading-relaxed">{tx.ctaBody}</p>
           </div>
-          <a
-            href="#contacto"
-            className="shrink-0 inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 transition-colors"
-          >
-            {tx.ctaBtn}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
+          <MagneticButton className="shrink-0">
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 transition-colors"
+            >
+              {tx.ctaBtn}
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </MagneticButton>
         </div>
 
       </div>

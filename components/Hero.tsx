@@ -1,86 +1,11 @@
 "use client"
 
-import { useEffect, useRef } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
 import { ScrambleText } from "@/components/ScrambleText"
-
-function GradientCanvas() {
-  const ref = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = ref.current
-    if (!canvas) return
-    const ctx = canvas.getContext("2d")
-    if (!ctx) return
-
-    const orbs = [
-      { x: 0.15, y: 0.4,  vx: 0.00022, vy: 0.00014, r: 0.58, rgb: "99,102,241"  },
-      { x: 0.78, y: 0.55, vx: -0.00018, vy: 0.00022, r: 0.48, rgb: "124,58,237" },
-      { x: 0.5,  y: 0.08, vx: 0.00028,  vy: -0.0002, r: 0.52, rgb: "37,99,235"  },
-    ]
-
-    let mouseX = 0.5
-    let mouseY = 0.5
-    let raf: number
-
-    const onMouse = (e: MouseEvent) => {
-      mouseX = e.clientX / window.innerWidth
-      mouseY = e.clientY / window.innerHeight
-    }
-
-    const resize = () => {
-      canvas.width = canvas.offsetWidth
-      canvas.height = canvas.offsetHeight
-    }
-
-    const draw = () => {
-      const w = canvas.width
-      const h = canvas.height
-      if (!w || !h) { raf = requestAnimationFrame(draw); return }
-
-      ctx.clearRect(0, 0, w, h)
-
-      for (const orb of orbs) {
-        orb.x += orb.vx
-        orb.y += orb.vy
-        if (orb.x < -0.1 || orb.x > 1.1) orb.vx *= -1
-        if (orb.y < -0.1 || orb.y > 1.1) orb.vy *= -1
-
-        const cx = (orb.x + (mouseX - 0.5) * 0.06) * w
-        const cy = (orb.y + (mouseY - 0.5) * 0.06) * h
-        const r  = orb.r * Math.max(w, h)
-
-        const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r)
-        grad.addColorStop(0, `rgba(${orb.rgb},0.38)`)
-        grad.addColorStop(1, `rgba(${orb.rgb},0)`)
-
-        ctx.globalCompositeOperation = "screen"
-        ctx.beginPath()
-        ctx.arc(cx, cy, r, 0, Math.PI * 2)
-        ctx.fillStyle = grad
-        ctx.fill()
-      }
-
-      ctx.globalCompositeOperation = "source-over"
-      raf = requestAnimationFrame(draw)
-    }
-
-    resize()
-    window.addEventListener("resize", resize)
-    window.addEventListener("mousemove", onMouse)
-    draw()
-
-    return () => {
-      cancelAnimationFrame(raf)
-      window.removeEventListener("resize", resize)
-      window.removeEventListener("mousemove", onMouse)
-    }
-  }, [])
-
-  return <canvas ref={ref} className="absolute inset-0 w-full h-full" />
-}
+import { NeuralNoise } from "@/components/ui/neural-noise"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function Hero() {
   const { lang } = useLanguage()
@@ -96,8 +21,8 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col overflow-hidden"
       style={{ background: "#060812" }}
     >
-      {/* Animated shader-like gradient */}
-      <GradientCanvas />
+      {/* WebGL neural noise — base layer */}
+      <NeuralNoise color={[0.39, 0.40, 0.94]} opacity={0.22} speed={0.0008} />
 
       {/* Dot grid */}
       <div
@@ -238,41 +163,47 @@ export default function Hero() {
           className="flex flex-wrap gap-3"
           style={{ animation: "fadeUp 0.7s ease both", animationDelay: "0.35s" }}
         >
-          <a
-            href="#contacto"
-            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:scale-105"
-            style={{
-              background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-              color: "#fff",
-              boxShadow: "0 0 0 0 rgba(99,102,241,0.4)",
-            }}
-            onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 28px rgba(99,102,241,0.5)")}
-            onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(99,102,241,0.4)")}
-          >
-            {tx.startProject}
-          </a>
-          <a
-            href="#proyectos"
-            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:bg-white/[0.07]"
-            style={{
-              border: "0.5px solid rgba(255,255,255,0.13)",
-              color: "rgba(255,255,255,0.6)",
-            }}
-          >
-            {tx.viewWork}
-          </a>
-          <a
-            href={waHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:bg-white/[0.07]"
-            style={{
-              border: "0.5px solid rgba(255,255,255,0.08)",
-              color: "rgba(255,255,255,0.38)",
-            }}
-          >
-            {tx.whatsapp}
-          </a>
+          <MagneticButton>
+            <a
+              href="#contacto"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300"
+              style={{
+                background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+                color: "#fff",
+                boxShadow: "0 0 0 0 rgba(99,102,241,0.4)",
+              }}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 28px rgba(99,102,241,0.5)")}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(99,102,241,0.4)")}
+            >
+              {tx.startProject}
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.3}>
+            <a
+              href="#proyectos"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:bg-white/[0.07]"
+              style={{
+                border: "0.5px solid rgba(255,255,255,0.13)",
+                color: "rgba(255,255,255,0.6)",
+              }}
+            >
+              {tx.viewWork}
+            </a>
+          </MagneticButton>
+          <MagneticButton strength={0.25}>
+            <a
+              href={waHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 text-sm font-medium rounded-full transition-all duration-300 hover:bg-white/[0.07]"
+              style={{
+                border: "0.5px solid rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.38)",
+              }}
+            >
+              {tx.whatsapp}
+            </a>
+          </MagneticButton>
         </div>
       </div>
 

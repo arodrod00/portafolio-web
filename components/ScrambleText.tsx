@@ -6,26 +6,32 @@ const CHARS = '!<>─*#?╋▒░$&@%┼╌'
 
 interface Props {
   text: string
-  delay?: number   // ms after intersection before starting
+  delay?: number
 }
 
 export function ScrambleText({ text, delay = 80 }: Props) {
+  const orig = useRef(Array.from(text))
+  const isFirstMount = useRef(true)
+
   const [chars, setChars] = useState<{ c: string; done: boolean }[]>(
-    () => Array.from(text).map(c => ({ c, done: false }))
+    () => orig.current.map(c => ({ c, done: false }))
   )
   const [triggered, setTriggered] = useState(false)
   const ref = useRef<HTMLSpanElement>(null)
 
-  // Fire once when the element enters the viewport
+  // Sync orig and chars when language changes — skip the initial mount
+  useEffect(() => {
+    if (isFirstMount.current) { isFirstMount.current = false; return }
+    orig.current = Array.from(text)
+    setChars(orig.current.map(c => ({ c, done: true })))
+  }, [text])
+
   useEffect(() => {
     const el = ref.current
     if (!el) return
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setTriggered(true)
-          observer.disconnect()
-        }
+        if (entry.isIntersecting) { setTriggered(true); observer.disconnect() }
       },
       { threshold: 0.1 }
     )
@@ -33,20 +39,15 @@ export function ScrambleText({ text, delay = 80 }: Props) {
     return () => observer.disconnect()
   }, [])
 
-  // Run scramble animation after trigger
   useEffect(() => {
     if (!triggered) return
-    const arr = Array.from(text)
-    const total = 1400
-    const scrambleDur = 340
-    const spread = total - scrambleDur
-    let raf: number
-    let t0: number | null = null
+    const arr = orig.current  // snapshot at trigger time — stable across language changes
+    const total = 1400, scrambleDur = 340, spread = total - scrambleDur
+    let raf: number, t0: number | null = null
 
     const tick = (ts: number) => {
       if (!t0) t0 = ts
       const elapsed = ts - t0
-
       setChars(arr.map((ch, i) => {
         if (ch === ' ') return { c: ' ', done: true }
         const start = (i / arr.length) * spread
@@ -54,31 +55,47 @@ export function ScrambleText({ text, delay = 80 }: Props) {
         if (elapsed >= end) return { c: ch, done: true }
         return { c: CHARS[Math.floor(Math.random() * CHARS.length)], done: false }
       }))
-
-      if (elapsed < total + 50) {
-        raf = requestAnimationFrame(tick)
-      } else {
-        setChars(arr.map(c => ({ c, done: true })))
-      }
+      if (elapsed < total + 50) { raf = requestAnimationFrame(tick) }
+      else { setChars(arr.map(c => ({ c, done: true }))) }
     }
 
     const timeout = setTimeout(() => { raf = requestAnimationFrame(tick) }, delay)
     return () => { clearTimeout(timeout); cancelAnimationFrame(raf) }
-  }, [triggered, text, delay])
+  }, [triggered, delay])  // text removed — language changes handled by the sync effect above
 
   return (
     <span ref={ref}>
-      {chars.map(({ c, done }, i) => (
-        <span
-          key={i}
-          style={{
-            color: done ? 'inherit' : 'rgba(99,102,241,0.4)',
-            transition: done ? 'color 0.08s' : 'none',
-          }}
-        >
-          {c}
-        </span>
-      ))}
+      {chars.map(({ c, done }, i) => {
+        const original = orig.current[i]
+
+        // Spaces: render as-is — no overlay needed
+        if (original === ' ') return <span key={i}> </span>
+
+        // Non-space: hidden original reserves layout width,
+        // visible char floats above absolutely — zero layout shift
+        return (
+          <span key={i} style={{ position: 'relative', display: 'inline-block' }}>
+            <span style={{ visibility: 'hidden', userSelect: 'none' }} aria-hidden="true">
+              {original}
+            </span>
+            <span
+              aria-hidden={!done}
+              style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: done ? 'inherit' : 'rgba(99,102,241,0.4)',
+                transition: done ? 'color 0.08s' : 'none',
+                userSelect: done ? 'auto' : 'none',
+              }}
+            >
+              {c}
+            </span>
+          </span>
+        )
+      })}
     </span>
   )
 }
