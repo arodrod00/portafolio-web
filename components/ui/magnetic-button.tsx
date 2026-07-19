@@ -10,7 +10,7 @@ interface Props {
 
 export function MagneticButton({ children, strength = 0.38, className, style }: Props) {
   const ref = useRef<HTMLDivElement>(null)
-  const rafRef = useRef<number | undefined>()
+  const rafRef = useRef<number | undefined>(undefined)
   const curX = useRef(0)
   const curY = useRef(0)
 
