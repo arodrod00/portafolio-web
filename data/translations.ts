@@ -119,6 +119,20 @@ export const t = {
       { title: "Camero Outdoor Kitchen",        category: "Sitio Corporativo",   description: "Sitio de presentación para constructor de cocinas exteriores en Miami." },
     ],
 
+    // ─── ABOUT RELIFT ────────────────────────────
+    aboutSection: {
+      label:       "Sobre Relift",
+      headline:    ["Construimos herramientas digitales", "que levantan tu negocio."],
+      bio:         "Relift LLC es una empresa de desarrollo de software con base en Miami, FL. Diseñamos, construimos y automatizamos productos digitales para negocios que quieren resultados reales — no solo un sitio bonito.",
+      founderRole: "Founder & Lead Developer · Miami, FL",
+      diffLabel:   "Lo que nos hace diferentes",
+      diff: [
+        { title: "Código propio, sin templates",  body: "Cada proyecto se programa desde cero. Sin page builders ni temas comprados. Control total sobre rendimiento y diseño." },
+        { title: "Diseño y código, los dos",      body: "Un solo equipo cubre diseño y desarrollo. Sin intermediarios ni malentendidos — entregas más rápidas y coherentes." },
+        { title: "Enfocados en resultados",       body: "Cada decisión se evalúa con una sola pregunta: ¿esto le trae más clientes al negocio?" },
+      ],
+    },
+
     // ─── HABILIDADES / SOBRE NOSOTROS ────────────
     skillsSection: {
       label:        "Sobre nosotros",
@@ -260,6 +274,19 @@ export const t = {
       { title: "Hello Gorgeous Hair Studio",    category: "Booking System",   description: "Showcase and booking site for a hair studio." },
       { title: "Camero Outdoor Kitchen",        category: "Corporate Site",   description: "Showcase site for a Miami outdoor kitchen builder." },
     ],
+
+    aboutSection: {
+      label:       "About Relift",
+      headline:    ["We build digital tools that", "lift your business."],
+      bio:         "Relift LLC is a software development company based in Miami, FL. We design, build, and automate digital products for businesses that want real results — not just a pretty website.",
+      founderRole: "Founder & Lead Developer · Miami, FL",
+      diffLabel:   "What makes us different",
+      diff: [
+        { title: "Custom code, no templates",  body: "Every project is hand-coded from scratch. No page builders, no purchased themes. Full control over performance and design." },
+        { title: "Design and code, both",      body: "One team covers design and development. No middlemen, no miscommunication — faster and more cohesive delivery." },
+        { title: "Results-first thinking",     body: "Every decision is evaluated against one question: does this bring more clients to the business?" },
+      ],
+    },
 
     skillsSection: {
       label:       "About us",
