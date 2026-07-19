@@ -116,11 +116,12 @@ export function NeuralNoise({ color = [0.39, 0.40, 0.94], opacity = 0.22, speed 
     gl.uniform1f(uniforms.u_speed, speed)
 
     function resizeCanvas() {
+      const el = canvasEl as HTMLCanvasElement
       const dpr = Math.min(window.devicePixelRatio, 2)
-      canvasEl.width = canvasEl.offsetWidth * dpr
-      canvasEl.height = canvasEl.offsetHeight * dpr
-      gl!.viewport(0, 0, canvasEl.width, canvasEl.height)
-      if (uniforms.u_ratio) gl!.uniform1f(uniforms.u_ratio, canvasEl.width / canvasEl.height)
+      el.width = el.offsetWidth * dpr
+      el.height = el.offsetHeight * dpr
+      gl!.viewport(0, 0, el.width, el.height)
+      if (uniforms.u_ratio) gl!.uniform1f(uniforms.u_ratio, el.width / el.height)
     }
 
     function render() {
