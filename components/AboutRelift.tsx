@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
+import { ScrambleText } from "@/components/ScrambleText"
 
 export default function AboutRelift() {
   const { lang } = useLanguage()
@@ -43,8 +44,10 @@ export default function AboutRelift() {
               className="text-4xl sm:text-5xl font-semibold text-white leading-[1.1] tracking-tight mb-8"
               style={{ letterSpacing: "-0.02em" }}
             >
-              {tx.headline[0]}<br />
-              <span style={{ color: "#a5b4fc" }}>{tx.headline[1]}</span>
+              <ScrambleText text={tx.headline[0]} /><br />
+              <span style={{ color: "#a5b4fc" }}>
+                <ScrambleText text={tx.headline[1]} delay={180} />
+              </span>
             </h2>
 
             <p

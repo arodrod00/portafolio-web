@@ -1,58 +1,10 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
-
-const SCRAMBLE_CHARS = '!<>─*#?╋▒░$&@%┼╌'
-
-function ScrambleText({ text, delay = 300 }: { text: string; delay?: number }) {
-  const [chars, setChars] = useState<{ c: string; done: boolean }[]>(
-    () => Array.from(text).map(c => ({ c, done: false }))
-  )
-
-  useEffect(() => {
-    const arr = Array.from(text)
-    const total = 1600
-    const scrambleDur = 380
-    const spread = total - scrambleDur
-    let raf: number
-    let t0: number | null = null
-
-    const tick = (ts: number) => {
-      if (!t0) t0 = ts
-      const elapsed = ts - t0
-
-      setChars(arr.map((ch, i) => {
-        if (ch === ' ') return { c: ' ', done: true }
-        const start = (i / arr.length) * spread
-        const end = start + scrambleDur
-        if (elapsed >= end) return { c: ch, done: true }
-        return { c: SCRAMBLE_CHARS[Math.floor(Math.random() * SCRAMBLE_CHARS.length)], done: false }
-      }))
-
-      if (elapsed < total + 50) {
-        raf = requestAnimationFrame(tick)
-      } else {
-        setChars(arr.map(c => ({ c, done: true })))
-      }
-    }
-
-    const timeout = setTimeout(() => { raf = requestAnimationFrame(tick) }, delay)
-    return () => { clearTimeout(timeout); cancelAnimationFrame(raf) }
-  }, [text, delay])
-
-  return (
-    <>
-      {chars.map(({ c, done }, i) => (
-        <span key={i} style={{ color: done ? 'inherit' : 'rgba(99,102,241,0.5)', transition: done ? 'color 0.1s' : 'none' }}>
-          {c}
-        </span>
-      ))}
-    </>
-  )
-}
+import { ScrambleText } from "@/components/ScrambleText"
 
 function GradientCanvas() {
   const ref = useRef<HTMLCanvasElement>(null)

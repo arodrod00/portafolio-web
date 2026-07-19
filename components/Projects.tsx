@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
+import { ScrambleText } from "@/components/ScrambleText"
 
 export default function Projects() {
   const { lang } = useLanguage()
@@ -19,7 +20,7 @@ export default function Projects() {
           <div>
             <p className="text-xs tracking-widest text-gray-400 uppercase mb-3">{tx.label}</p>
             <h2 className="text-3xl sm:text-5xl font-medium text-gray-900 leading-tight">
-              {tx.heading}
+              <ScrambleText text={tx.heading} />
             </h2>
           </div>
           <p className="text-sm text-gray-400 sm:text-right max-w-xs leading-relaxed">

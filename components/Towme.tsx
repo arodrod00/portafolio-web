@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
+import { ScrambleText } from "@/components/ScrambleText"
 
 export default function Towme() {
   const { lang } = useLanguage()
@@ -71,7 +72,7 @@ export default function Towme() {
               className="text-6xl sm:text-8xl font-bold text-white mb-4"
               style={{ letterSpacing: "-0.035em", lineHeight: 1 }}
             >
-              Towme
+              <ScrambleText text="Towme" delay={120} />
             </h2>
 
             {/* Tagline */}

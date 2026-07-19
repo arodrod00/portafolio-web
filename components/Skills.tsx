@@ -3,6 +3,7 @@
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
+import { ScrambleText } from "@/components/ScrambleText"
 
 export default function Skills() {
   const { lang } = useLanguage()
@@ -15,7 +16,8 @@ export default function Skills() {
           <div>
             <p className="text-xs tracking-widest text-gray-400 uppercase mb-3">{tx.label}</p>
             <h2 className="text-3xl sm:text-4xl font-medium text-gray-900 mb-6">
-              {tx.heading[0]}<br />{tx.heading[1]}
+              <ScrambleText text={tx.heading[0]} /><br />
+              <ScrambleText text={tx.heading[1]} delay={140} />
             </h2>
             <p className="text-gray-500 leading-relaxed text-lg">{tx.bio}</p>
           </div>
