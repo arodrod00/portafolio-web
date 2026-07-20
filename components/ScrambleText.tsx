@@ -63,36 +63,56 @@ export function ScrambleText({ text, delay = 80 }: Props) {
     return () => { clearTimeout(timeout); cancelAnimationFrame(raf) }
   }, [triggered, delay])  // text removed — language changes handled by the sync effect above
 
+  // Group chars into word-runs so line breaks only happen at spaces,
+  // not between individual inline-block letter spans.
+  const groups: { isSpace: boolean; indices: number[] }[] = []
+  chars.forEach((_, i) => {
+    if (orig.current[i] === ' ') {
+      groups.push({ isSpace: true, indices: [i] })
+    } else {
+      const last = groups[groups.length - 1]
+      if (last && !last.isSpace) {
+        last.indices.push(i)
+      } else {
+        groups.push({ isSpace: false, indices: [i] })
+      }
+    }
+  })
+
   return (
     <span ref={ref}>
-      {chars.map(({ c, done }, i) => {
-        const original = orig.current[i]
+      {groups.map((group, gi) => {
+        if (group.isSpace) return <span key={gi}> </span>
 
-        // Spaces: render as-is — no overlay needed
-        if (original === ' ') return <span key={i}> </span>
-
-        // Non-space: hidden original reserves layout width,
-        // visible char floats above absolutely — zero layout shift
+        // Wrap each word in inline-block + nowrap so it never breaks mid-word
         return (
-          <span key={i} style={{ position: 'relative', display: 'inline-block' }}>
-            <span style={{ visibility: 'hidden', userSelect: 'none' }} aria-hidden="true">
-              {original}
-            </span>
-            <span
-              aria-hidden={!done}
-              style={{
-                position: 'absolute',
-                inset: 0,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: done ? 'inherit' : 'rgba(99,102,241,0.4)',
-                transition: done ? 'color 0.08s' : 'none',
-                userSelect: done ? 'auto' : 'none',
-              }}
-            >
-              {c}
-            </span>
+          <span key={gi} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+            {group.indices.map(i => {
+              const { c, done } = chars[i]
+              const original = orig.current[i]
+              return (
+                <span key={i} style={{ position: 'relative', display: 'inline-block' }}>
+                  <span style={{ visibility: 'hidden', userSelect: 'none' }} aria-hidden="true">
+                    {original}
+                  </span>
+                  <span
+                    aria-hidden={!done}
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: done ? 'inherit' : 'rgba(99,102,241,0.4)',
+                      transition: done ? 'color 0.08s' : 'none',
+                      userSelect: done ? 'auto' : 'none',
+                    }}
+                  >
+                    {c}
+                  </span>
+                </span>
+              )
+            })}
           </span>
         )
       })}
