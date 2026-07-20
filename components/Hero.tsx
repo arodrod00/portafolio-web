@@ -22,7 +22,7 @@ export default function Hero() {
       style={{ background: "#060812" }}
     >
       {/* WebGL neural noise — base layer */}
-      <NeuralNoise color={[0.39, 0.40, 0.94]} opacity={0.22} speed={0.0008} />
+      <NeuralNoise color={[0.39, 0.40, 0.94]} opacity={0.35} speed={0.0008} />
 
       {/* Dot grid */}
       <div

@@ -63,9 +63,9 @@ export function NeuralNoise({ color = [0.39, 0.40, 0.94], opacity = 0.22, speed 
         p = 0.5 * pow(1.0 - p, 2.0);
         float t = u_speed * u_time;
         float noise = neuro_shape(uv, t, p);
-        noise = 1.2 * pow(noise, 3.0);
-        noise += pow(noise, 10.0);
-        noise = max(0.0, noise - 0.5);
+        noise = 1.8 * pow(noise, 2.5);
+        noise += pow(noise, 8.0);
+        noise = max(0.0, noise - 0.3);
         noise *= (1.0 - length(vUv - 0.5));
         vec3 col = u_color * noise;
         gl_FragColor = vec4(col, noise);
