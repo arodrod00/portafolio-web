@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { t } from "@/data/translations"
 import { portfolio } from "@/data/portfolio"
@@ -9,6 +10,16 @@ import { MagneticButton } from "@/components/ui/magnetic-button"
 
 export default function Hero() {
   const { lang } = useLanguage()
+  const [canvasReady, setCanvasReady] = useState(false)
+
+  useEffect(() => {
+    if ("requestIdleCallback" in window) {
+      const id = requestIdleCallback(() => setCanvasReady(true), { timeout: 1200 })
+      return () => cancelIdleCallback(id)
+    }
+    const id = setTimeout(() => setCanvasReady(true), 600)
+    return () => clearTimeout(id)
+  }, [])
   const tx    = t[lang].hero
   const stats = t[lang].stats
   const waMsg = t[lang].whatsapp.message
@@ -21,8 +32,8 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col overflow-hidden"
       style={{ background: "#060812" }}
     >
-      {/* WebGL neural noise — base layer */}
-      <NeuralNoise color={[0.39, 0.40, 0.94]} opacity={0.35} speed={0.0008} />
+      {/* WebGL neural noise — deferred until idle to avoid blocking hydration */}
+      {canvasReady && <NeuralNoise color={[0.39, 0.40, 0.94]} opacity={0.35} speed={0.0008} />}
 
       {/* Dot grid */}
       <div

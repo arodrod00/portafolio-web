@@ -1,19 +1,19 @@
 import dynamic from "next/dynamic"
 import Navbar from "@/components/Navbar"
 import Hero from "@/components/Hero"
-import Marquee from "@/components/Marquee"
-import Services from "@/components/Services"
-import Projects from "@/components/Projects"
-import AboutRelift from "@/components/AboutRelift"
-import Towme from "@/components/Towme"
-import WhyWeb from "@/components/WhyWeb"
-import Skills from "@/components/Skills"
-import Contact from "@/components/Contact"
-import Footer from "@/components/Footer"
 import { portfolio } from "@/data/portfolio"
 
-// Code-split below-fold components — JS chunk loads separately, SSR keeps HTML intact
+// Below-fold: code-split so the initial JS bundle only covers the hero viewport
+const Marquee      = dynamic(() => import("@/components/Marquee"))
+const Services     = dynamic(() => import("@/components/Services"))
+const Projects     = dynamic(() => import("@/components/Projects"))
+const AboutRelift  = dynamic(() => import("@/components/AboutRelift"))
+const Towme        = dynamic(() => import("@/components/Towme"))
 const StyleExamples = dynamic(() => import("@/components/StyleExamples"))
+const WhyWeb       = dynamic(() => import("@/components/WhyWeb"))
+const Skills       = dynamic(() => import("@/components/Skills"))
+const Contact      = dynamic(() => import("@/components/Contact"))
+const Footer       = dynamic(() => import("@/components/Footer"))
 const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"))
 
 export default function Page() {
